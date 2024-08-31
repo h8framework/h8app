@@ -1,0 +1,7 @@
+from .check_metaclass import check_metaclass
+
+
+class LifespanMetaclass(type):
+    def __init__(cls, name, bases, clsdict) -> None:
+        check_metaclass(cls, name, bases)
+        super(LifespanMetaclass, cls).__init__(name, bases, clsdict)

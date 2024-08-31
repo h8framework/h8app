@@ -36,7 +36,8 @@
 				"mohsen1.prettify-json",
 				"tamasfe.even-better-toml",
 				"spmeesseman.vscode-taskexplorer",
-				"github.vscode-github-actions"
+				"github.vscode-github-actions",
+				"Gruntfuggly.todo-tree"
 			],
 
 			"settings": {
