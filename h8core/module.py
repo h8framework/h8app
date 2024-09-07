@@ -1,4 +1,4 @@
-from .check_metaclass import check_module_properties
+from .check_module_properties import check_module_properties
 
 
 class ModuleMetaclass(type):
