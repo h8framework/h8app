@@ -12,3 +12,7 @@ def check_metaclass(cls, name, bases):
                 raise TypeError(
                     f"Can't create new class {name} with no abstract classmethod {method_name} redefined in the metaclass"
                 )
+
+
+
+
