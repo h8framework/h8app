@@ -1,5 +1,9 @@
 from .bases import AdaptersSetupBase, ComponentsSetupBase, MiddlewaresSetupBase
 
+__all__ = [
+    "ModuleMetaclass",
+]
+
 
 class ModuleMetaclass(type):
     def __init__(cls, name, bases, clsdict) -> None:

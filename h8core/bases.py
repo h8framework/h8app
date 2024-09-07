@@ -3,6 +3,7 @@ __all__ = [
     "AdaptersSetupBase",
     "MiddlewaresSetupBase",
     "ModulesSetupBase",
+    "ContraintsBase",
 ]
 
 
@@ -16,3 +17,6 @@ class MiddlewaresSetupBase: ...
 
 
 class ModulesSetupBase: ...
+
+
+class ContraintsBase: ...

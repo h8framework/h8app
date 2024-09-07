@@ -1,4 +1,4 @@
-def check_subclasses_from_abract_class(cls, name, bases):
+def check_subclasses_from_abstract_class(cls, name, bases):
     if bases and len(bases) > 1:
         raise TypeError(
             f"You cannot declare multiple inheritance of a class that defines abstract methods. Please check implementation of {name}"

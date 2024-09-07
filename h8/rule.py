@@ -1,9 +1,9 @@
 from abc import abstractmethod
 from typing import Any
 
-from h8core import SpecMetaclass
+from h8core import RuleMetaclass
 
 
-class SpecBase(metaclass=SpecMetaclass):
+class RuleBase(metaclass=RuleMetaclass):
     @abstractmethod
     def is_satisfied_by(self, input: Any) -> None: ...

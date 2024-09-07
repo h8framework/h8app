@@ -1,11 +1,11 @@
 from .check_subclasses_from_abract_class import check_subclasses_from_abstract_class
 
 __all__ = [
-    "LifespanMetaclass",
+    "RuleMetaclass",
 ]
 
 
-class LifespanMetaclass(type):
+class RuleMetaclass(type):
     def __init__(cls, name, bases, clsdict) -> None:
         check_subclasses_from_abstract_class(cls, name, bases)
-        super(LifespanMetaclass, cls).__init__(name, bases, clsdict)
+        super(RuleMetaclass, cls).__init__(name, bases, clsdict)

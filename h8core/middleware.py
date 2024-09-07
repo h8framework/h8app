@@ -1,4 +1,10 @@
-class MiddlewateMetaclass(type):
+__all__ = [
+    "MiddlewareMetaclass",
+    "MiddlewareBase",
+]
+
+
+class MiddlewareMetaclass(type):
     def __init__(cls, name, bases, clsdict) -> None:
         if bases and len(bases) > 1:
             raise TypeError(
@@ -11,8 +17,8 @@ class MiddlewateMetaclass(type):
                 pass
                 # TODO: Design the implementation
 
-        super(MiddlewateMetaclass, cls).__init__(name, bases, clsdict)
+        super(MiddlewareMetaclass, cls).__init__(name, bases, clsdict)
 
 
-class MiddlewareBase(metaclass=MiddlewateMetaclass):
+class MiddlewareBase(metaclass=MiddlewareMetaclass):
     pass
