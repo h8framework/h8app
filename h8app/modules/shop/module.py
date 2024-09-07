@@ -1,4 +1,4 @@
-from h8 import AdapterMapping, Adapters, Components, Middlewares, ModuleBase
+from h8 import AdapterMapping, AdaptersSetup, ComponentsSetup, MiddlewaresSetup, ModuleBase
 from h8fastapi import H8FastApiMiddleware
 from h8sqla import H8SqlaMiddleware
 
@@ -8,7 +8,7 @@ from .infra.repositories import PurchaseOrderMongoRepositoryAdapter
 
 
 class ShopModule(ModuleBase):
-    components = Components(
+    components = ComponentsSetup(
         lifespan,
         use_cases,
         builtins,
@@ -19,11 +19,11 @@ class ShopModule(ModuleBase):
         specs,
     )
 
-    adapters = Adapters(
+    adapters = AdaptersSetup(
         AdapterMapping(entity=PurchaseOrder, impl=PurchaseOrderMongoRepositoryAdapter()),
     )
 
-    middlewares = Middlewares(
+    middlewares = MiddlewaresSetup(
         H8SqlaMiddleware(),
         H8FastApiMiddleware(),
     )

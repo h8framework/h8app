@@ -1,6 +1,6 @@
 from .app import App, Modules
 from .entity import EntityBase
-from .module import AdapterMapping, Adapters, Components, Middlewares, ModuleBase
+from .module import AdapterMapping, AdaptersSetup, ComponentsSetup, MiddlewaresSetup, ModuleBase
 from .use_case import (
     UseCaseCreateBase,
     UseCaseDeleteBase,
@@ -15,12 +15,12 @@ __all__ = [
     "UseCaseDeleteBase",
     "UseCaseDetailBase",
     "UseCaseFindBase",
-    "Components",
+    "ComponentsSetup",
     "AdapterMapping",
-    "Adapters",
+    "AdaptersSetup",
     "ModuleBase",
     "EntityBase",
     "App",
     "Modules",
-    "Middlewares",
+    "MiddlewaresSetup",
 ]

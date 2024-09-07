@@ -1,4 +1,4 @@
-from h8 import Components, Middlewares, ModuleBase
+from h8 import ComponentsSetup, MiddlewaresSetup, ModuleBase
 from h8fastapi import H8FastApiMiddleware
 from h8sqla import H8SqlaMiddleware
 
@@ -6,7 +6,7 @@ from .app import builtins, entities, lifespan, listeners, services, specs, tasks
 
 
 class StockModule(ModuleBase):
-    components = Components(
+    components = ComponentsSetup(
         lifespan,
         use_cases,
         builtins,
@@ -17,7 +17,7 @@ class StockModule(ModuleBase):
         specs,
     )
 
-    middlewares = Middlewares(
+    middlewares = MiddlewaresSetup(
         H8SqlaMiddleware(),
         H8FastApiMiddleware(),
     )

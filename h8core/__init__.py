@@ -1,3 +1,4 @@
+from .bases import *
 from .lifespan import LifespanMetaclass
 from .middleware import MiddlewareBase, MiddlewateMetaclass
 from .module import ModuleMetaclass

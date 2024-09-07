@@ -1,7 +1,13 @@
 from types import ModuleType
 from typing import Any
 
-from h8core import MiddlewareBase, ModuleMetaclass
+from h8core import (
+    AdaptersSetupBase,
+    ComponentsSetupBase,
+    MiddlewareBase,
+    MiddlewaresSetupBase,
+    ModuleMetaclass,
+)
 
 from .entity import EntityBase
 
@@ -11,17 +17,17 @@ class AdapterMapping:
         raise NotImplementedError("Not Implemented")
 
 
-class Adapters:
+class AdaptersSetup(AdaptersSetupBase):
     def __init__(self, *args: AdapterMapping) -> None:
         raise NotImplementedError("Not Implemented")
 
 
-class Components:
+class ComponentsSetup(ComponentsSetupBase):
     def __init__(self, *args: ModuleType) -> None:
         raise NotImplementedError("Not Implemented")
 
 
-class Middlewares:
+class MiddlewaresSetup(MiddlewaresSetupBase):
     def __init__(self, *args: MiddlewareBase) -> None:
         raise NotImplementedError("Not Implemented")
 
