@@ -1,4 +1,5 @@
-from typing import Any, get_type_hints
+from typing import Any, Self, get_type_hints
+from uuid import UUID
 
 from h8core import AllowedAttributeTypes, Attribute, Criteria, EntityBaseMetaclass, Order
 
@@ -20,23 +21,23 @@ class EntityBase(metaclass=EntityBaseMetaclass):
         criteria: Criteria | None = None,
         order_by: Attribute[AllowedAttributeTypes] | None = None,
         order: Order = Order.DESCENDING,
-    ) -> "list[EntityBase]": ...
+    ) -> list[Self]: ...
 
     def find(
         self,
-        filters: Filter | None,
+        filters: Criteria | None,
         searchtext: str | None,
-        order_by: OrderByStrEnum | None,
-        order: CoreOrderStrEnum | None,
+        order_by: Order | None,
+        order: Attribute[AllowedAttributeTypes] | None,
         page_size: int,
         page: str | None,
-    ) -> IPage[Entity]: ...
+    ) -> IPage[Self]: ...
 
-    def get(self, record_id: UUID) -> Entity | None: ...
+    def get(self, record_id: UUID) -> Self | None: ...
 
     def label(self, record_id: UUID) -> LabeledIdModel: ...
 
-    def create(self, entity: Entity) -> None: ...
+    def create(self, entity: Self) -> None: ...
 
     def update(self, record_id: UUID, changes: dict[str, Any]) -> None: ...
 
