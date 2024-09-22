@@ -1,10 +1,10 @@
-from types import ModuleType
+from h8core import AppBaseMetaclass, AppSetupBase
 
 
-class Modules:
-    def __init__(self, modules: ModuleType) -> None:
-        raise NotImplementedError("Not Implemented")
-
-
-class App:
+class AppBase(metaclass=AppBaseMetaclass):
     pass
+
+
+class AppSetup(AppSetupBase):
+    def __init__(self, app: AppBase) -> None:
+        raise NotImplementedError("Not Implemented")

@@ -1,9 +1,9 @@
 __all__ = [
-    "MiddlewareBaseMetaclass",
+    "AppBaseMetaclass",
 ]
 
 
-class MiddlewareBaseMetaclass(type):
+class AppBaseMetaclass(type):
     def __init__(cls, name, bases, clsdict) -> None:
         if bases and len(bases) > 1:
             raise TypeError(
@@ -16,4 +16,4 @@ class MiddlewareBaseMetaclass(type):
                 pass
                 # TODO: Design the implementation
 
-        super(MiddlewareBaseMetaclass, cls).__init__(name, bases, clsdict)
+        super(AppBaseMetaclass, cls).__init__(name, bases, clsdict)

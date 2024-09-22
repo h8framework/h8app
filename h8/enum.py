@@ -1,0 +1,13 @@
+from enum import IntEnum, StrEnum
+
+
+class NullableStrEnum(StrEnum): ...
+
+
+class NullableIntEnum(IntEnum): ...
+
+
+class ValuableStrEnum(StrEnum): ...
+
+
+class ValuableIntEnum(IntEnum): ...

@@ -1,1 +1,0 @@
-from .purchase_order_mongo import PurchaseOrderMongoRepositoryAdapter

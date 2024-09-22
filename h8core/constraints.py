@@ -3,7 +3,7 @@ from typing import get_type_hints
 
 from .attribute import Attribute
 from .bases import ContraintsBase
-from .entity import EntityBaseMetaclass
+from .entity_port import EntityBaseMetaclass
 
 __all__ = [
     "StringConstraints",

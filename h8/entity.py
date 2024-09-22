@@ -1,7 +1,6 @@
-from typing import Any, Self, get_type_hints
-from uuid import UUID
+from typing import Any, TypedDict, get_type_hints
 
-from h8core import AllowedAttributeTypes, Attribute, Criteria, EntityBaseMetaclass, Order
+from h8core import EntityBaseMetaclass
 
 
 class EntityBase(metaclass=EntityBaseMetaclass):
@@ -15,30 +14,14 @@ class EntityBase(metaclass=EntityBaseMetaclass):
             else:
                 setattr(self, name, kwargs[name])
 
-    def filter(
-        self,
-        limit: int,
-        criteria: Criteria | None = None,
-        order_by: Attribute[AllowedAttributeTypes] | None = None,
-        order: Order = Order.DESCENDING,
-    ) -> list[Self]: ...
 
-    def find(
-        self,
-        filters: Criteria | None,
-        searchtext: str | None,
-        order_by: Order | None,
-        order: Attribute[AllowedAttributeTypes] | None,
-        page_size: int,
-        page: str | None,
-    ) -> IPage[Self]: ...
+class Page[T](TypedDict):
+    next: str | None
+    previous: str | None
+    page_size: int
+    total: int
+    records: list[T]
 
-    def get(self, record_id: UUID) -> Self | None: ...
 
-    def label(self, record_id: UUID) -> LabeledIdModel: ...
-
-    def create(self, entity: Self) -> None: ...
-
-    def update(self, record_id: UUID, changes: dict[str, Any]) -> None: ...
-
-    def delete(self, record_id: UUID) -> None: ...
+class EntityRepositoryPortBase(metaclass=EntityBaseMetaclass):
+    pass

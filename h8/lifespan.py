@@ -1,9 +1,9 @@
 from abc import abstractmethod
 
-from h8core import LifespanMetaclass
+from h8core import LifespanBaseMetaclass
 
 
-class LifespanBase(metaclass=LifespanMetaclass):
+class LifespanBase(metaclass=LifespanBaseMetaclass):
     @abstractmethod
     def startup(self) -> None: ...
 

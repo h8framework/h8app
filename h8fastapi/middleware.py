@@ -1,4 +1,4 @@
-from h8core import MiddlewareBase
+from h8 import MiddlewareBase
 
 
 class H8FastApiMiddleware(MiddlewareBase):
