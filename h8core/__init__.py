@@ -3,7 +3,7 @@ from .attribute import *
 from .bases import *
 from .component import *
 from .criteria import *
-from .entity_port import *
+from .entity import *
 from .enums import *
 from .lifespan import *
 from .middleware import *

@@ -1,7 +1,7 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
-class EnvironmentSettings(BaseSettings):
+class DatabaseSettings(BaseSettings):
     model_config = SettingsConfigDict(
         secrets_dir="/run/secrets",
         env_file=".h8appsettings",
@@ -10,4 +10,9 @@ class EnvironmentSettings(BaseSettings):
         extra="ignore",
     )
 
-    ENVIRONMENT_DEVMODE: bool = True
+    DATABASE_USERNAME: str = "postgres"
+    DATABASE_PASSWORD: str = "postgres"
+    DATABASE_NAME: str = "h8app"
+    DATABASE_PORT: int = 5432
+    DATABASE_HOST: str = "db-container"
+    DATABASE_POOL_SIZE: int = 10

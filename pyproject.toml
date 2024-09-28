@@ -16,7 +16,9 @@ authors = [
     {name = "Juan Cerezo", email = "jcerezo.dev@proton.me"},
 ]
 
-dependencies = []
+dependencies = [
+  "python-dotenv==1.0.1"
+]
 
 [project.optional-dependencies]
 test = [

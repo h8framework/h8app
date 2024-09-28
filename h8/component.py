@@ -1,6 +1,7 @@
 from h8core import ComponentMetaclass
 
-from .entity import EntityBase, EntityRepositoryPortBase
+from .entity import EntityBase
+from .entity_repository import EntityRepositoryPortBase
 from .enum import NullableIntEnum, NullableStrEnum, ValuableIntEnum, ValuableStrEnum
 
 

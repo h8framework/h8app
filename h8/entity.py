@@ -1,4 +1,4 @@
-from typing import Any, TypedDict, get_type_hints
+from typing import Any, get_type_hints
 
 from h8core import EntityBaseMetaclass
 
@@ -13,15 +13,3 @@ class EntityBase(metaclass=EntityBaseMetaclass):
 
             else:
                 setattr(self, name, kwargs[name])
-
-
-class Page[T](TypedDict):
-    next: str | None
-    previous: str | None
-    page_size: int
-    total: int
-    records: list[T]
-
-
-class EntityRepositoryPortBase(metaclass=EntityBaseMetaclass):
-    pass

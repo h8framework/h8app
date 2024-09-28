@@ -3,12 +3,14 @@ from h8core.adapter import AdapterChoiceBase
 
 from .app import AppBase, AppSetup
 from .component import ComponentBase
-from .entity import EntityBase, EntityRepositoryPortBase, Page
+from .entity import EntityBase
+from .entity_repository import EntityRepositoryPortBase
 from .enum import NullableIntEnum, NullableStrEnum, ValuableIntEnum, ValuableStrEnum
 from .h8 import H8AppBase
 from .labels import LabeledInt, LabeledNone, LabeledStr, LabeledUuid
 from .middleware import MiddlewareBase, MiddlewaresSetup
 from .module import AdapterMapping, AdaptersSetup, ModuleBase
+from .page import Page
 from .use_case import (
     UseCaseCreateBase,
     UseCaseDeleteBase,
@@ -36,4 +38,5 @@ __all__ = [
     "AppBase",
     "ComponentBase",
     "EntityRepositoryPortBase",
+    "Page",
 ]

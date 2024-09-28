@@ -5,7 +5,8 @@ from types import ModuleType
 from typing import Callable, TypedDict
 
 from .component import ComponentBase
-from .entity import EntityBase, EntityRepositoryPortBase
+from .entity import EntityBase
+from .entity_repository import EntityRepositoryPortBase
 from .enum import NullableIntEnum, NullableStrEnum, ValuableIntEnum, ValuableStrEnum
 from .module import ModuleBase
 
