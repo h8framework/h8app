@@ -9,4 +9,5 @@ from .lifespan import *
 from .middleware import *
 from .module import *
 from .rule import *
+from .settings import *
 from .use_case import *
